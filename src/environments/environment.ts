@@ -4,10 +4,11 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:3000/",
-  // apiUrl: "https://seobyai-api.webrexstudio.com/",
-  appUrl: "http://localhost:4200",
-  appName: "SEO by AI"
+  // apiUrl: "http://localhost:3000/",
+  apiUrl: "https://announcement-bar-api.webrexstudio.com/",
+  // appUrl: "http://localhost:4200",
+  appUrl: "https://announcement-bar.webrexstudio.com",
+  appName: "Announcement Bar"
 };
 
 
