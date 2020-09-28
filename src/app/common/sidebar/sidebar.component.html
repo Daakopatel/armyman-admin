@@ -24,12 +24,6 @@
         <p>Deleted User</p>
       </a>
     </li>
-    <li routerLinkActive="active" class="user-profile" (click)="openPopup(true)">
-      <a>
-        <img src="assets/menu-icon-user.png">
-        <p>{{storeName}}</p>
-      </a>
-    </li>
     <ul [ngClass]="isPopupOpen ? 'profile-popup active' : 'profile-popup'">
       <li>
         <a [routerLink]="['/setting']" (click)="menuOpen();openPopup(false)">

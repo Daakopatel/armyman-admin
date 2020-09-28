@@ -31,16 +31,16 @@ export class DeletedUserComponent implements OnInit {
     this.loading = true;
     this.deletedUserService.getUsers(page.offset + 1, page.limit).subscribe((res) => {
       this.users = res.data.deletedUser;
+      console.log(this.users)
       this.page = page;
       this.page.count = res.data.count;
       this.loading = false;
-      
-      this.users.forEach(user => {
-        var today = new Date(new Date().toJSON().slice(0, 10));
-        let diffTime = Math.abs(today.getTime() - new Date(user.trial_start).getTime());
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        user.trial_days = user.trial_days - diffDays > 0 ? user.trial_days - diffDays : 0;
+      this.users.sort((a, b) => {
+        return <any>new Date(b.created) - <any>new Date(a.created);
       });
+      
+      
+    
     }, err => {
       this.loading = false;
     });
