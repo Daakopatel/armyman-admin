@@ -13,10 +13,10 @@ export class UserService {
         headers.append('Authorization', localStorage.getItem('token').replace(/\"/g, ""));
     }
 
-    getUsers(page, limit) {
+    getUsers(page, limit, store, email, shopUrl) {
         let headers = new Headers();
         this.createAuthorizationHeader(headers);
-        return this.http.get(environment.apiUrl + 'admin/user?page='+page+'&limit='+limit, { headers: headers }).pipe(map((response: any) => response.json()));
+        return this.http.get(environment.apiUrl + 'admin/user?page=' + page + '&limit=' + limit + '&store=' + store + '&email=' + email + '&shopUrl=' + shopUrl, { headers: headers }).pipe(map((response: any) => response.json()));
     }
 
     getAccessToken(shopUrl) {

@@ -16,7 +16,9 @@ export class UserComponent implements OnInit {
     pageSize: 0
   }
   public loading = false;
-
+  public searchStore: string = '';
+  public searchEmail: string = '';
+  public searchShopUrl: string = '';
   constructor(private userService: UserService) {
     this.page.offset = 0;
     this.page.limit = localStorage.getItem('pageLimit') ? parseInt(localStorage.getItem('pageLimit')) : 10;
@@ -28,7 +30,7 @@ export class UserComponent implements OnInit {
 
   getUsers(page) {
     this.loading = true;
-    this.userService.getUsers(page.offset + 1, page.limit).subscribe((res) => {
+    this.userService.getUsers(page.offset + 1, page.limit, this.searchStore, this.searchEmail, this.searchShopUrl).subscribe((res) => {
       this.users = res.data.user;
       this.page = page;
       this.page.count = res.data.count;

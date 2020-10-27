@@ -2,7 +2,13 @@
   <app-loading></app-loading>
 </div>
 <div *ngIf="!loading">
-  <div class="row-per-page">
+  <div class="content-header">
+    <div class="search-bar">
+      <input type="text" placeholder="Store name" [(ngModel)]="searchStore">
+      <input type="text" placeholder="Email" [(ngModel)]="searchEmail">
+      <input type="text" placeholder="Shop Url" [(ngModel)]="searchShopUrl">
+      <button class="btn" (click)="getUsers(page);">Search</button>
+    </div>
     <form>
       <div class="single-input">
         <div class="input">
