@@ -510,3 +510,47 @@ form {
         padding: 10px 10px 10px 30px;
       }
     }}}
+
+    .content-header {
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 20px;
+    
+      .search-bar {
+        width: calc(100% - 140px);
+        margin-right: 20px;
+        // border: 1px solid #3e82b0;
+        border-radius: 5px;
+        overflow: hidden;
+    
+        input {
+          width: calc(33% - 27px);
+          height: 42px;
+          border: none;
+          padding: 10px;
+          border: 1px solid #3e82b0;
+          border-right: none;
+          width: calc(33% - 27px);
+    
+          &:first-child {
+            border-radius: 5px 0px 0px 5px;
+          }
+        }
+    
+        .btn {
+          width: 90px;
+          margin: 0px;
+          border-radius: 0px 5px 5px 0px;
+          border: 1px solid #3e82b0;
+        }
+      }
+    
+      form {
+        width: 120px;
+    
+        .single-input {
+          margin: 0;
+        }
+      }
+    }
+    
