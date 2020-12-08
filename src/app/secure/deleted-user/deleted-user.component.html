@@ -22,7 +22,7 @@
     <ngx-datatable class="material" [rows]="users" [headerHeight]="50" [footerHeight]="50" [externalPaging]="true"
         [rowHeight]="50" [columnMode]="'force'" [limit]="page.limit" [offset]="page.offset" [count]="page.count"
         [scrollbarH]="false" (page)="getUsers($event)">
-        <ngx-datatable-column [resizeable]="false" [canAutoResize]="false" [width]="100">
+        <ngx-datatable-column [resizeable]="false" [canAutoResize]="false" [width]="40">
             <ng-template let-column="column" ngx-datatable-header-template>
                 No
             </ng-template>
@@ -40,7 +40,7 @@
             </ng-template>
         </ngx-datatable-column>
 
-        <ngx-datatable-column >
+        <ngx-datatable-column  [canAutoResize]="true" [width]="200">
             <ng-template let-column="column" ngx-datatable-header-template>
                 Email
             </ng-template>
@@ -57,8 +57,16 @@
                 {{row.country_name}}
             </ng-template>
         </ngx-datatable-column>
+        <ngx-datatable-column [resizeable]="false" [canAutoResize]="true"  [width]="120">
+            <ng-template let-column="column" ngx-datatable-header-template>
+              phone
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{row.phone}}
+            </ng-template>
+          </ngx-datatable-column>
 
-        <ngx-datatable-column [resizeable]="false" [canAutoResize]="false" [width]="105">
+        <ngx-datatable-column [resizeable]="false" [canAutoResize]="false" [width]="60">
             <ng-template let-column="column" ngx-datatable-header-template>
                 Current Plan
             </ng-template>
@@ -66,10 +74,7 @@
                 {{row.recurringPlanName}}
             </ng-template>
         </ngx-datatable-column>
-
-      
-
-        <ngx-datatable-column [resizeable]="false" [canAutoResize]="false" [width]="95">
+        <ngx-datatable-column [resizeable]="false" [canAutoResize]="false" [width]="40">
             <ng-template let-column="column" ngx-datatable-header-template>
                 trial days
             </ng-template>
