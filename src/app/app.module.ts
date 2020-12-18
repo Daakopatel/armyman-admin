@@ -10,7 +10,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 //services
-import { DashboradService } from './secure/dashboard/dashborad.service';
 import { LoginService } from './public/login/login.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AntiAuthGuardService } from './services/anti-auth-guard.service';
@@ -21,15 +20,12 @@ import { DeletedUserService } from './secure/deleted-user/deleted-user.service';
 import {TimeAgoPipe} from 'time-ago-pipe';
 
 
-import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 
 //component
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './secure/dashboard/dashboard.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { LoginComponent } from './public/login/login.component';
 import { LoadingComponent } from './common/loading/loading.component';
-import { ChartsModule } from 'ng2-charts';
 import { ForgotPasswordComponent } from './public/forgot-password/forgot-password.component';
 import { SetNewPasswordComponent } from './public/set-new-password/set-new-password.component';
 import { PublicComponent } from './public/public.component';
@@ -41,7 +37,6 @@ import { DeletedUserComponent } from './secure/deleted-user/deleted-user.compone
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     SidebarComponent,
     LoginComponent,
     LoadingComponent,
@@ -60,12 +55,10 @@ import { DeletedUserComponent } from './secure/deleted-user/deleted-user.compone
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    ChartsModule,
     NgxDatatableModule,
     NgbModule
   ],
   providers: [
-    DashboradService,
     AuthGuard,
     AntiAuthGuardService,
     LoginService,
