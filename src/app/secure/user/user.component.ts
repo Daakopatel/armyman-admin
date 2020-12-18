@@ -51,7 +51,7 @@ export class UserComponent implements OnInit {
     this.userService.getAccessToken(row.shopUrl).subscribe((res) => {
       console.log(res.data);
       console.log(window.location);
-      let url = environment.appUrl + '/app/auth?token=' + res.data.token;
+      let url = environment.appUrl + '/auth?token=' + res.data.token;
       console.log(url);
       window.open(url, '_blank');
     }, err => {
