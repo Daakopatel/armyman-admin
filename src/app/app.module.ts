@@ -15,7 +15,6 @@ import { AuthGuard } from './services/auth-guard.service';
 import { AntiAuthGuardService } from './services/anti-auth-guard.service';
 import { SecureService } from './secure/secure.service';
 import { UserService } from './secure/user/user.service';
-import { SettingsService } from './secure/settings/settings.service';
 import { DeletedUserService } from './secure/deleted-user/deleted-user.service';
 import {TimeAgoPipe} from 'time-ago-pipe';
 
@@ -26,12 +25,9 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { LoginComponent } from './public/login/login.component';
 import { LoadingComponent } from './common/loading/loading.component';
-import { ForgotPasswordComponent } from './public/forgot-password/forgot-password.component';
-import { SetNewPasswordComponent } from './public/set-new-password/set-new-password.component';
 import { PublicComponent } from './public/public.component';
 import { SecureComponent } from './secure/secure.component';
 import { UserComponent } from './secure/user/user.component';
-import { SettingsComponent } from './secure/settings/settings.component';
 import { DeletedUserComponent } from './secure/deleted-user/deleted-user.component';
 
 @NgModule({
@@ -40,12 +36,9 @@ import { DeletedUserComponent } from './secure/deleted-user/deleted-user.compone
     SidebarComponent,
     LoginComponent,
     LoadingComponent,
-    ForgotPasswordComponent,
-    SetNewPasswordComponent,
     PublicComponent,
     SecureComponent,
     UserComponent,
-    SettingsComponent,
     DeletedUserComponent,
     TimeAgoPipe
   ],
@@ -64,7 +57,6 @@ import { DeletedUserComponent } from './secure/deleted-user/deleted-user.compone
     LoginService,
     SecureService,
     UserService,
-    SettingsService,
     DeletedUserService
   ],
   bootstrap: [AppComponent],

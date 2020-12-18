@@ -51,8 +51,7 @@ export class UserComponent implements OnInit {
     this.userService.getAccessToken(row.shopUrl).subscribe((res) => {
       console.log(res.data);
       console.log(window.location);
-      let url = environment.appUrl + '/auth?token=' + res.data.token;
-      console.log(url);
+      let url = environment.appUrl + 'auth?token=' + res.data.token;
       window.open(url, '_blank');
     }, err => {
     });
@@ -64,6 +63,5 @@ export class UserComponent implements OnInit {
 
     localStorage.setItem('pageLimit', this.page.limit.toString());
     this.getUsers(this.page);
-    console.log(this.page);
   }
 }
