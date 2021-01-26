@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: "https://protector-api.dakasapps.com/",
-  appName: "Protector Store Shield"
+  apiUrl: "http://localhost:3000/",
+  appUrl: "https://protector.dakasapps.com/",
+  appName: "Product slide"
 };

@@ -129,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "shopify-starter-admin"
+    }
+  },
+  "defaultProject": "shopify-starter-admin",
+  "cli": {
+    "analytics": false
+  }
 }
