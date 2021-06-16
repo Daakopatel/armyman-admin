@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
   apiUrl: localStorage.getItem('api'),
-  appUrl: "https://protector.dakasapps.com/",
+  appUrl: "http://localhost:4200/",
   appName: "Product slide"
 };

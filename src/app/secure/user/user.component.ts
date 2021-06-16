@@ -26,13 +26,14 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dakaas = localStorage.getItem('selected') ? localStorage.getItem('selected') : 'protector'
     this.getUsers(this.page);
-    this.dakaas = localStorage.getItem('selected')
   }
 
   getUsers(page) {
+    console.log(this.dakaas+'token')
     this.loading = true;
-    this.userService.getUsers(page.offset + 1, page.limit, this.searchStore, this.searchEmail, this.searchShopUrl).subscribe((res) => {
+    this.userService.getUsers(page.offset + 1, page.limit, this.searchStore, this.searchEmail, this.searchShopUrl , this.dakaas+'-token').subscribe((res) => {
       this.users = res.data.user;
       this.page = page;
       this.page.count = res.data.count;
@@ -50,9 +51,7 @@ export class UserComponent implements OnInit {
   }
 
   getAccess(row) {
-    this.userService.getAccessToken(row.shopUrl).subscribe((res) => {
-      console.log(res.data);
-      console.log(window.location);
+    this.userService.getAccessToken(row.shopUrl , localStorage.get(this.dakaas+'-token')).subscribe((res) => {
       let url = environment.appUrl + 'auth?token=' + res.data.token;
       window.open(url, '_blank');
     }, err => {
@@ -62,7 +61,6 @@ export class UserComponent implements OnInit {
 
   pageLimit() {
     this.page.offset = 0;
-
     localStorage.setItem('pageLimit', this.page.limit.toString());
     this.getUsers(this.page);
   }
