@@ -80,17 +80,17 @@ export class UserComponent implements OnInit {
     } else if ($event.target.value == 'effect') {
       localStorage.setItem('selected', 'effect')
 
-      localStorage.setItem('api', 'http://effect-api.dakasapps.com/')
+      localStorage.setItem('api', 'https://effect-api.dakasapps.com/')
       localStorage.setItem('app', 'https://effect-app.dakasapps.com/')
     } else if ($event.target.value == 'helpy') {
       localStorage.setItem('selected', 'helpy')
 
-      localStorage.setItem('api', 'http://helpy-api.dakasapps.com/')
+      localStorage.setItem('api', 'https://helpy-api.dakasapps.com/')
       localStorage.setItem('app', 'https://helpy-app.dakasapps.com/')
     } else if ($event.target.value == 'social') {
       localStorage.setItem('selected', 'social')
 
-      localStorage.setItem('api', 'http://spcial-api.dakasapps.com/')
+      localStorage.setItem('api', 'https://spcial-api.dakasapps.com/')
       localStorage.setItem('app', 'https://social-app.dakasapps.com/')
     }
 
