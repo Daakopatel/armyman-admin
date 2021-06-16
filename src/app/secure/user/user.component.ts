@@ -88,7 +88,7 @@ export class UserComponent implements OnInit {
     } else if ($event.target.value == 'social') {
       localStorage.setItem('selected', 'social')
 
-      localStorage.setItem('api', 'https://spcial-api.dakasapps.com/')
+      localStorage.setItem('api', 'https://social-api.dakasapps.com/')
       localStorage.setItem('app', 'https://social-app.dakasapps.com/')
     }
 
