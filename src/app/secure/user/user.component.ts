@@ -31,7 +31,6 @@ export class UserComponent implements OnInit {
   }
 
   getUsers(page) {
-    console.log(this.dakaas+'token')
     this.loading = true;
     this.userService.getUsers(page.offset + 1, page.limit, this.searchStore, this.searchEmail, this.searchShopUrl , this.dakaas+'-token').subscribe((res) => {
       this.users = res.data.user;
@@ -51,6 +50,7 @@ export class UserComponent implements OnInit {
   }
 
   getAccess(row) {
+    console.log(localStorage.getItem('token'))
     this.userService.getAccessToken(row.shopUrl , localStorage.getItem(this.dakaas+'-token')).subscribe((res) => {
       let url = environment.appUrl + 'auth?token=' + res.data.token;
       window.open(url, '_blank');

@@ -10,7 +10,8 @@ export class UserService {
     constructor(private http: Http) { }
 
     createAuthorizationHeader(headers: Headers , token ) {
-        headers.append('Authorization', localStorage.getItem(token).replace(/\"/g, ""));
+        console.log(token , localStorage.getItem(token))
+        headers.append('Authorization', token.replace(/\"/g, ""));
     }
 
     getUsers(page, limit, store, email, shopUrl , token) {
