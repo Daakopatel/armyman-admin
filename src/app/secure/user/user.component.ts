@@ -66,16 +66,23 @@ export class UserComponent implements OnInit {
   }
 
   appChange($event) {
-    console.log($event.target.value);
     if ($event.target.value == 'protector') {
-      localStorage.setItem('api' , 'https://protector-api.dakasapps.com/')
-      localStorage.setItem('app' , 'https://protector.dakasapps.com/')
-    }else if($event.target.value == 'product-slide') {
-      localStorage.setItem('api' , 'https://product-slide-api.dakasapps.com/')
-      localStorage.setItem('app' , 'http://product-slide.dakasapps.com/')
-    }else if($event.target.value == 'effect') {
-      localStorage.setItem('api' , 'http://effect-api.dakasapps.com/')
-      localStorage.setItem('app' , 'https://effect-app.dakasapps.com/')
+      localStorage.setItem('api', 'https://protector-api.dakasapps.com/')
+      localStorage.setItem('app', 'https://protector.dakasapps.com/')
+    } else if ($event.target.value == 'product-slide') {
+      localStorage.setItem('api', 'https://product-slide-api.dakasapps.com/')
+      localStorage.setItem('app', 'http://product-slide.dakasapps.com/')
+    } else if ($event.target.value == 'effect') {
+      localStorage.setItem('api', 'http://effect-api.dakasapps.com/')
+      localStorage.setItem('app', 'https://effect-app.dakasapps.com/')
+    } else if ($event.target.value == 'helpy') {
+      localStorage.setItem('api', 'http://helpy-api.dakasapps.com/')
+      localStorage.setItem('app', 'https://helpy-app.dakasapps.com/')
+    } else if ($event.target.value == 'social') {
+      localStorage.setItem('api', 'http://spcial-api.dakasapps.com/')
+      localStorage.setItem('app', 'https://social-app.dakasapps.com/')
     }
+
+    window.location.reload()
   }
 }
