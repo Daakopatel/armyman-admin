@@ -76,7 +76,7 @@ export class UserComponent implements OnInit {
       localStorage.setItem('selected', 'product-slide')
 
       localStorage.setItem('api', 'https://product-slide-api.dakasapps.com/')
-      localStorage.setItem('app', 'http://product-slide.dakasapps.com/')
+      localStorage.setItem('app', 'https://product-slide.dakasapps.com/')
     } else if ($event.target.value == 'effect') {
       localStorage.setItem('selected', 'effect')
 
