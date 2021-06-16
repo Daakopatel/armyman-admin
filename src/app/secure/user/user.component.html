@@ -2,7 +2,7 @@
   <app-loading></app-loading>
 </div>
 <div>
-  <select  (change)="appChange($event)">
+  <select [(ngModel)]="dakaas"  (change)="appChange($event)">
     <option value="protector">Protector</option>
     <option value="product-slide">Product SLide</option>
     <option value="effect">Effect App</option>

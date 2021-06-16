@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
     offset: 0,
     pageSize: 0
   }
+  dakaas : any
   public loading = false;
   public searchStore: string = '';
   public searchEmail: string = '';
@@ -26,6 +27,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers(this.page);
+    this.dakaas = localStorage.getItem('selected')
   }
 
   getUsers(page) {
@@ -68,17 +70,26 @@ export class UserComponent implements OnInit {
   appChange($event) {
     if ($event.target.value == 'protector') {
       localStorage.setItem('api', 'https://protector-api.dakasapps.com/')
+      localStorage.setItem('selected', 'protector')
       localStorage.setItem('app', 'https://protector.dakasapps.com/')
     } else if ($event.target.value == 'product-slide') {
+      localStorage.setItem('selected', 'product-slide')
+
       localStorage.setItem('api', 'https://product-slide-api.dakasapps.com/')
       localStorage.setItem('app', 'http://product-slide.dakasapps.com/')
     } else if ($event.target.value == 'effect') {
+      localStorage.setItem('selected', 'effect')
+
       localStorage.setItem('api', 'http://effect-api.dakasapps.com/')
       localStorage.setItem('app', 'https://effect-app.dakasapps.com/')
     } else if ($event.target.value == 'helpy') {
+      localStorage.setItem('selected', 'helpy')
+
       localStorage.setItem('api', 'http://helpy-api.dakasapps.com/')
       localStorage.setItem('app', 'https://helpy-app.dakasapps.com/')
     } else if ($event.target.value == 'social') {
+      localStorage.setItem('selected', 'social')
+
       localStorage.setItem('api', 'http://spcial-api.dakasapps.com/')
       localStorage.setItem('app', 'https://social-app.dakasapps.com/')
     }
