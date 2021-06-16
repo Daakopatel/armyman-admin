@@ -64,4 +64,15 @@ export class UserComponent implements OnInit {
     localStorage.setItem('pageLimit', this.page.limit.toString());
     this.getUsers(this.page);
   }
+
+  appChange($event) {
+    console.log($event.target.value);
+    if ($event.target.value == 'protector') {
+      localStorage.setItem('api' , 'https://protector-api.dakasapps.com')
+      localStorage.setItem('app' , 'https://protector.dakasapps.com')
+    }else if($event.target.value == 'product-slide') {
+      localStorage.setItem('api' , 'http://product-slide.dakasapps.com')
+      localStorage.setItem('app' , 'https://product-slide-api.dakasapps.com')
+    }
+  }
 }

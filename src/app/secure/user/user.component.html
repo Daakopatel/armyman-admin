@@ -1,6 +1,14 @@
 <div class="loading-grid" *ngIf="loading">
   <app-loading></app-loading>
 </div>
+<div>
+  <select  (change)="appChange($event)">
+    <option value="protector">Protector</option>
+    <option value="product-slide">Product SLide</option>
+    <option value="effect">Effect App</option>
+    <option value="social">Social App</option>
+  </select>
+</div>
 <div *ngIf="!loading">
   <div class="content-header">
     <div class="search-bar">
