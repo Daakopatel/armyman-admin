@@ -11,7 +11,7 @@ export class UserService {
 
     createAuthorizationHeader(headers: Headers , token ) {
         console.log(token , localStorage.getItem(token))
-        headers.append('Authorization', token.replace(/\"/g, ""));
+        headers.append('Authorization', localStorage.getItem(token).replace(/\"/g, ""));
     }
 
     getUsers(page, limit, store, email, shopUrl , token) {
